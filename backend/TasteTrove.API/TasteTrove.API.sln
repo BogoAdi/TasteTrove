@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34009.444
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteTrove.API", "TasteTrove.API.csproj", "{F5A1A046-9991-4E89-B2ED-98F573280324}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteTrove.Domain", "..\TasteTrove.Domain\TasteTrove.Domain.csproj", "{1228E4DD-F56D-4FC5-9DBD-EE31069BEA94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteTrove.Infrastructure", "..\TasteTrove.Infrastructure\TasteTrove.Infrastructure.csproj", "{E59E4D87-F267-410B-B35C-8D33B5621102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TasteTrove.Application", "..\TasteTrove.Application\TasteTrove.Application.csproj", "{AB0F75C0-C811-4A91-99B6-8F6BC044FF17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F5A1A046-9991-4E89-B2ED-98F573280324}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5A1A046-9991-4E89-B2ED-98F573280324}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5A1A046-9991-4E89-B2ED-98F573280324}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5A1A046-9991-4E89-B2ED-98F573280324}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1228E4DD-F56D-4FC5-9DBD-EE31069BEA94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1228E4DD-F56D-4FC5-9DBD-EE31069BEA94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1228E4DD-F56D-4FC5-9DBD-EE31069BEA94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1228E4DD-F56D-4FC5-9DBD-EE31069BEA94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E59E4D87-F267-410B-B35C-8D33B5621102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E59E4D87-F267-410B-B35C-8D33B5621102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E59E4D87-F267-410B-B35C-8D33B5621102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E59E4D87-F267-410B-B35C-8D33B5621102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AB0F75C0-C811-4A91-99B6-8F6BC044FF17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB0F75C0-C811-4A91-99B6-8F6BC044FF17}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB0F75C0-C811-4A91-99B6-8F6BC044FF17}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB0F75C0-C811-4A91-99B6-8F6BC044FF17}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9964DFCF-97F2-42E6-A6D1-549FFA031DED}
+	EndGlobalSection
+EndGlobal
