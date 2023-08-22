@@ -1,3 +1,15 @@
+using AutoMapper;
+using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+using TasteTrove.API.DTOs;
+using TasteTrove.Application;
+using TasteTrove.Application.Users.Commands;
+using TasteTrove.Application.Users.Queries;
+using TasteTrove.Domain;
+using TasteTrove.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -5,6 +17,16 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddAutoMapper(typeof(MapperMarker));
+builder.Services.AddMediatR(cfg =>
+{
+    cfg.RegisterServicesFromAssemblyContaining<MeditorMarker>();
+});
+
+builder.Services.AddDbContext<TasteTroveContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetValue<string>("ConnectionStrings:ConnectionString"));
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -34,6 +56,29 @@ app.MapGet("/weatherforecast", () =>
     return forecast;
 })
 .WithName("GetWeatherForecast");
+
+app.MapPost("/api/create/user", async (CreateUserDTO userDTO, IMediator mediator, IMapper mapper) =>
+{
+    var mappingResult = mapper.Map<User>(userDTO);
+    var result = await mediator.Send(new CreateUserCommand(mappingResult));
+    return Results.Ok(result);
+}).WithName("PostUser");
+
+app.MapGet("/api/all-users", async (IMediator mediator) =>
+{
+    var result = await mediator.Send(new GetAllUsersQuery());
+    return Results.Ok(result);
+}).WithName("GetUsers");
+
+app.MapDelete("/api/all-users", async ([Required] Guid id, IMediator mediator) =>
+{
+    var result = await mediator.Send(new DeleteUserCommand { Id = id });
+    if (result == true)
+    {
+        return Results.NoContent();
+    }
+    return Results.NotFound();
+}).WithName("DeleteUsers");
 
 app.Run();
 
